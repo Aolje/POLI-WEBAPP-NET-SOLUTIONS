@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Mi Sitio Web</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/admin/admin.css">
+</head>
+<body>
+    <!-- Admin Navbar -->
+    <nav class="admin-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Mi Sitio Web - Admin</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Volver al Sitio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="content.html" class="nav-link">Contenido</a>
+                </li>
+                <li class="nav-item">
+                    <a href="users.html" class="nav-link">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">Configuración</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="container">
+            <h1>Panel de Administración</h1>
+            <div class="admin-dashboard">
+                <div class="dashboard-card">
+                    <h3>Contenido</h3>
+                    <p>Gestionar páginas y contenido del sitio</p>
+                    <a href="content.html" class="btn">Gestionar</a>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Usuarios</h3>
+                    <p>Administrar usuarios y permisos</p>
+                    <a href="users.html" class="btn">Gestionar</a>
+                </div>
+                <div class="dashboard-card">
+                    <h3>Configuración</h3>
+                    <p>Configurar el sitio web</p>
+                    <a href="settings.html" class="btn">Configurar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/admin/admin.js"></script>
+</body>
+</html>
