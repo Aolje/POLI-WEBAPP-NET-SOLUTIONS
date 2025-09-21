@@ -12,7 +12,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="../index.html">Mi Sitio Web</a>
+                <img src="../images/common/logo.png" alt="Logo">
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -49,7 +49,7 @@
                 <h1>Iniciar Sesión</h1>
                 <form id="loginForm" class="login-form">
                     <div class="form-group">
-                        <label for="username">Usuario:</label>
+                        <label for="username">Username:</label>
                         <input type="text" id="username" name="username" required>
                     </div>
                     <div class="form-group">
@@ -58,21 +58,36 @@
                     </div>
                     <button type="submit" class="btn">Iniciar Sesión</button>
                 </form>
-                <div class="admin-link">
-                    <a href="../admin/index.html">Acceso Administrador</a>
-                </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Mi Sitio Web. Todos los derechos reservados.</p>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h2>Ponte en contacto</h2>
+                <div class="contact-info">
+                    <p>Medellín - Colombia</p>
+                    <p>serviciostecnologicos@netsolutions.com.co</p>
+                    <p>+57 301908909</p>
+                </div>
+                <div class="social-links">
+                    <img src="../images/common/icon-ig.svg" alt="Instagram">
+                    <img src="../images/common/icon-facebook.webp" alt="Facebook">
+                    <img src="../images/common/icon-x.webp" alt="Twitter">
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="logo-graphic">
+                    <img src="../images/common/logo.png" alt="NETSOLUTIONS Logo" class="footer-logo">
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="../js/main.js"></script>
+    <script src="../js/demo-data.js"></script>
     <script src="../js/pages/login.js"></script>
 </body>
 </html>
