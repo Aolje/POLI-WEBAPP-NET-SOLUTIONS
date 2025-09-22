@@ -1,6 +1,36 @@
-/* Estilos específicos para la página Nosotros */
+/* Tipografías */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #2c3e50;
+}
+
+/* Secciones */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: #7f8c8d;
+    line-height: 1.7;
+}
+
+/* Banner */
+.about-banner {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.about-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* About */
 .about-section {
-    padding: 2rem 0;
+    padding: 4rem 2rem;
 }
 
 .about-content {
@@ -8,63 +38,120 @@
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     align-items: center;
-    margin-top: 2rem;
-}
-
-.about-text h2 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.about-text p {
-    color: #7f8c8d;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-.about-image {
-    text-align: center;
 }
 
 .about-image img {
     max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-.team-section {
-    padding: 3rem 0;
-    background-color: #f8f9fa;
+/* Timeline */
+.timeline-section {
+    background: #fff;
+    padding: 4rem 2rem;
 }
 
-.team-grid {
+.timeline {
+    position: relative;
+    margin-top: 2rem;
+    padding-left: 20px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #3498db;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 50px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: #3498db;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #3498db;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #3498db;
+    font-family: 'Poppins', sans-serif;
+}
+
+.timeline-content h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+/* Valores */
+.valores-section {
+    background: #f8f9fa;
+    padding: 4rem 2rem;
+}
+
+.valores-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.team-member {
-    background: white;
-    padding: 2rem;
+.valor-card {
+    background: #fff;
     border-radius: 8px;
+    padding: 2rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.team-member h4 {
+.valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.valor-card h3 {
     color: #2c3e50;
-    margin: 1rem 0 0.5rem 0;
+    margin-bottom: 1rem;
 }
 
-.team-member p {
-    color: #7f8c8d;
-    font-style: italic;
+.valor-card p {
+    font-size: 0.95rem;
 }
 
+/* Responsivo */
 @media (max-width: 768px) {
     .about-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        text-align: center;
+    }
+
+    .timeline::before {
+        left: 50%;
+    }
+
+    .timeline-item {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .timeline-item::before {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
