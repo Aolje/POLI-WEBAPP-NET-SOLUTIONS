@@ -26,7 +26,8 @@ WEBAPP/
 │       ├── categoria3.html
 │       └── categoria4.html
 ├── admin/                     # Panel de administración
-│   └── index.html
+│   └── admin.html
+|   ├── panel-admin.html
 ├── css/                       # Estilos CSS
 │   ├── main.css              # Estilos principales
 │   ├── pages/                # Estilos específicos por página

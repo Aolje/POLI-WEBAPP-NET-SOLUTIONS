@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Contactos - Panel de Administración</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/admin/admin.css">
+    <link rel="stylesheet" href="../css/admin/panel-admin.css">
+</head>
+
+<body>
+    <!-- Admin Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../images/common/logo.png" alt="Logo">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Volver al Sitio</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <div class="contacts-container">
+            <div class="contacts-header">
+                <h1>Gestión de Contactos</h1>
+                <button class="btn btn-primary" onclick="refreshContacts()">Actualizar</button>
+            </div>
+
+            <!-- Estadísticas -->
+            <div class="contacts-stats" id="contactsStats">
+                <!-- Se llenará dinámicamente -->
+            </div>
+
+            <!-- Tabla de contactos -->
+            <div class="contacts-table-container">
+                <div id="contactsTableContainer">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para editar contacto -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Editar Contacto</h3>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="editContactForm">
+                <input type="hidden" id="editContactId">
+
+                <div class="form-group">
+                    <label for="editContactName">Nombre:</label>
+                    <input type="text" id="editContactName" readonly disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="editContactEmail">Email:</label>
+                    <input type="email" id="editContactEmail" readonly disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="editContactPhone">Teléfono:</label>
+                    <input type="tel" id="editContactPhone" readonly disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="editContactSchedule">Horario de contacto:</label>
+                    <input type="text" id="editContactSchedule" readonly disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="editContactMessage">Mensaje:</label>
+                    <textarea id="editContactMessage" readonly disabled></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="editContactStatus">Estado:</label>
+                    <select id="editContactStatus">
+                        <option value="pendiente">Pendiente</option>
+                        <option value="respondido">Respondido</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="editContactComment">Comentario del administrador:</label>
+                    <textarea id="editContactComment"
+                        placeholder="Agregar comentarios sobre este contacto..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/admin/panel-admin.js"></script>
+</body>
+
+</html>

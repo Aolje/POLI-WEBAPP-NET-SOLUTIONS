@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setupEventListeners() {
         // Formulario de contacto
-    if (contactForm) {
+        if (contactForm) {
             contactForm.addEventListener('submit', handleContactFormSubmit);
         }
 
@@ -22,18 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function handleContactFormSubmit(e) {
-            e.preventDefault();
-            
+        e.preventDefault();
+        
         if (validateForm(contactForm)) {
             const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData);
-                
-                // Mostrar loading
+            const data = Object.fromEntries(formData);
+            
+            // Mostrar loading
             const submitBtn = contactForm.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                submitBtn.textContent = 'Enviando...';
-                submitBtn.disabled = true;
-                
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
             // Crear objeto de contacto
             const contactData = {
                 id: Date.now(),
@@ -49,21 +49,20 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             
             // Guardar en localStorage
-                setTimeout(() => {
+            setTimeout(() => {
                 const contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
                 contacts.push(contactData);
                 localStorage.setItem('contacts', JSON.stringify(contacts));
                 
                 showNotification('Mensaje enviado correctamente. Nos pondremos en contacto contigo pronto.', 'success');
                 contactForm.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 2000);
-            } else {
-                showNotification('Por favor, completa todos los campos requeridos', 'error');
-            }
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        } else {
+            showNotification('Por favor, completa todos los campos requeridos', 'error');
+        }
     }
-
 
     function setupFormValidation() {
         // Validación para formulario de contacto
@@ -82,25 +81,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function validateField(field) {
+        // Verificar si el campo es requerido y está vacío
         if (field.hasAttribute('required') && !field.value.trim()) {
             field.style.borderColor = '#e74c3c';
             return false;
-        } else if (field.type === 'email' && field.value) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(field.value)) {
-                field.style.borderColor = '#e74c3c';
-                return false;
-            }
-        } else if (field.type === 'tel' && field.value) {
-            const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-            if (!phoneRegex.test(field.value)) {
-                field.style.borderColor = '#e74c3c';
-                return false;
-            }
-        } else {
-            field.style.borderColor = '#2c3e50';
-            return true;
         }
+        
+        // Validar email si tiene valor
+        if (field.type === 'email' && field.value.trim()) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value.trim())) {
+                field.style.borderColor = '#e74c3c';
+                return false;
+            }
+        }
+        
+        // Validar teléfono si tiene valor
+        if (field.type === 'tel' && field.value.trim()) {
+            const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+            if (!phoneRegex.test(field.value.trim())) {
+                field.style.borderColor = '#e74c3c';
+                return false;
+            }
+        }
+        
+        // Si llegamos aquí, el campo es válido
+        field.style.borderColor = '#2c3e50';
+        return true;
     }
     
     function validateForm(form) {

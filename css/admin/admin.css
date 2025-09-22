@@ -1,19 +1,12 @@
-/* Estilos específicos para el panel de administración */
-.admin-navbar {
-    background-color: #34495e;
-    padding: 1rem 0;
-    position: fixed;
-    top: 0;
+.body{
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .admin-main {
+    width: 100%;
     margin-top: 80px;
     min-height: calc(100vh - 80px);
     padding: 2rem 0;
-    background-color: #ecf0f1;
 }
 
 .admin-dashboard {
