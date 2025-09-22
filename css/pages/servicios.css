@@ -1,4 +1,11 @@
 /* Estilos específicos para la página Servicios */
+body {
+    /* background: #285578; */
+    background: rgb(40, 85, 120);
+    min-height: 100vh;
+    color: white;
+}
+
 .services-section {
     padding: 2rem 0;
 }
