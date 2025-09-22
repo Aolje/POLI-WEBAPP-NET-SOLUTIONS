@@ -74,3 +74,26 @@
     color: #3498db;
     text-decoration: underline;
 }
+
+.register-link {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.register-link p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.register-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}

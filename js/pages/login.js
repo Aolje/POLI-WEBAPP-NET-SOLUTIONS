@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitBtn.textContent = 'Iniciando sesión...';
                 submitBtn.disabled = true;
                 
-                // Simular autenticación (aquí iría la lógica real)
+                // Autenticación de administradores
                 setTimeout(() => {
+                    // Verificar si es admin
                     if (username === 'admin' && password === 'admin') {
                         showNotification('Inicio de sesión exitoso', 'success');
                         // Redirigir al panel de administración
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             window.location.href = '../admin/index.html';
                         }, 1500);
                     } else {
-                        showNotification('Credenciales incorrectas', 'error');
+                        showNotification('Solo los administradores pueden acceder', 'error');
                         submitBtn.textContent = originalText;
                         submitBtn.disabled = false;
                     }
