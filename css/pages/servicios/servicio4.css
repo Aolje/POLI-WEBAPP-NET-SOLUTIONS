@@ -1,59 +1,116 @@
-/* Estilos específicos para Servicio 4 */
-.service-detail {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    color: white;
-    padding: 3rem;
-    border-radius: 12px;
-    margin-top: 2rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.service-detail h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-}
-
-.service-detail p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    opacity: 0.95;
-}
-
-.service-gallery {
-    margin-top: 3rem;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.gallery-item {
-    background: rgba(255,255,255,0.1);
-    padding: 1.5rem;
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-.gallery-item img {
+.service-image-1-1 {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-bottom: 1rem;
+    max-width: 110vw;
+    height: 30vw;
+    max-height: 78vw;
 }
 
-.gallery-item h4 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+.text-image {
+    position: relative;
+    display: flex;
+    margin-bottom: 29px;
+}
+
+/* .service-image-2-2 {
+    position: relative;
+    display: flex;
+    width: 38vw;
+    max-width: 52vw;
+    height: 24vw;
+    max-height: 39vw;
+    padding-top: 3rem;
+} */
+
+.text-one {
+    position: relative;
+    display: flex;
+    text-align: justify;
+    font-size: 22px;
+}
+
+.text-two {
+    position: relative;
+    display: flex;
+    white-space: pre-line;
+    font-size: 24px;
+    text-align: start;
+}
+
+.text-three {
+    position: relative;
+    display: flex;
+    white-space: pre-line;
+    font-size: 23px;
+    text-align: left;
+}
+
+.beneficios-del-servicio {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle-beneficios-del-servicio-1 {
+    font-size: 33px;
+    color: #fff;
+}
+
+.parrafo-beneficios-del-servicio-1 {
+    position: relative;
+    display: flex;
+    white-space: pre-line;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.services-grid-service-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card-service-1 {
+    /* background: white; */
+    /* padding: 2rem; */
+    padding-top: 2rem;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    margin-bottom: 6rem;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+    /* color: #2c3e50; */
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    white-space: pre-line;
+}
+
+.service-card p {
+    /* color: #7f8c8d; */
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.service1-image-1,
+.service1-image-2,
+.service1-image-3,
+.service1-image-4 {
+    width: 12vw;
+    max-width: 45vw;
+    height: 12vw;
+    max-height: 35vw;
 }
