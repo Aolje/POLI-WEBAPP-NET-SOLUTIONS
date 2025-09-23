@@ -1,46 +1,364 @@
-/* Estilos específicos para la página Home */
-.hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+body {
+    background: #285578;
+    min-height: 100vh;
     color: white;
-    padding: 4rem 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-content {
+    margin-top: 80px;/* Ajuste para header fixed */
+    min-height: calc(100vh - 600px);
+    padding: 0;
+    position: relative;
+}
+
+/* ====== TÍTULOS CON POPPINS ====== */
+.acerca h2,
+.servicio .texto h3,
+.ciencia h3,
+.rpa .texto h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Negrita para títulos */
+}
+
+/* ====== TEXTOS CON MONSERRAT ====== */
+.acerca p,
+.servicio .texto p,
+.ciencia p,
+.rpa .texto p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Peso normal para texto */
+}
+
+
+/* Sección Inicio */
+.Inicio {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    max-height: 800px;
+    overflow: hidden;
+    position: relative;
+}
+
+.Inicio img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Texto superpuesto sobre la imagen */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    width: 80%;
+    max-width: 900px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.overlay-text h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+/* ====== ACERCA DE NOSOTROS ====== */
+.acerca {
+    padding: 60px 6%;
+    text-align: center;
+    background: #285578;/* Fondo blanco para esta sección */
+    position: relative;
+    z-index: 2; /* Para asegurar que esté sobre otros elementos */
 }
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+.acerca h2 {
+    font-size: 32px;
+    margin: 0 0 20px 0;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
 
-.features {
-    padding: 4rem 0;
+.acerca p {
+    font-size: 18px;
+    color: white; /* Texto oscuro para contraste con fondo blanco */
+    line-height: 1.7;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: justify;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+/* ====== IMAGEN DESPUES DE ACERCA ====== */
+.imagenacerca {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
 }
 
-.feature-card {
-    background: white;
-    padding: 2rem;
+.imagenacerca img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    display: block;
+    object-fit: cover;
+    object-fit: center;
+    margin-bottom: 0;
+}
+
+.imagenacerca img,
+.Inicio img,
+.servicio .imagen img,
+.ciencia .imagen img {
+    image-rendering: -webkit-optimize-contrast; /* Mejor renderizado en Webkit */
+    image-rendering: crisp-edges; /* Mejor renderizado en Firefox */
+    image-rendering: high-quality; /* Renderizado de alta calidad */
+}
+/* ====== SERVICIOS ====== */
+.servicio {
+    background: #285578;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center;
+    padding: 40px 0;
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 0;
 }
 
-.feature-card h3 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
+
+.servicio .texto {
+    flex: 1;
+    text-align: left;
+    padding: 0 6%;
 }
 
-.feature-card p {
-    color: #7f8c8d;
+.servicio .texto h3 {
+    color: white;
+    margin-bottom: 15px;  /* Reducir espacio debajo del título */
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center; 
+    width: 100%; 
+}
+
+.servicio .texto p {
+    font-size: 17px;
+    color: white;
     line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.servicio .imagen {
+    flex: 1;
+    padding: 0 0 0 6%;
+}
+
+.servicio .imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    object-fit: cover;
+}
+
+/* Servicio con orden invertido */
+.diseño {
+    background: #061c30;
+    border-radius: 8px;
+    padding: 40px 0;
+    margin: 0 auto;
+    max-width: 100%;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 0;
+}
+
+
+.diseño .texto {
+    flex: 1;
+    text-align: left;
+    padding: 0 6%;
+}
+
+.diseño .texto h3 {
+    color: white;
+    margin-bottom: 15px;  /* Reducir espacio debajo del título */
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center; 
+    width: 100%; 
+}
+
+.diseño .texto p {
+    font-size: 17px;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.diseño .imagen {
+    flex: 1;
+    padding: 0 0 0 6%;
+    
+}
+
+.diseño .imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    object-fit: cover;
+    
+}
+
+
+/* ====== CIENCIA DE DATOS ====== */
+.ciencia {
+    background: #285578;
+    padding: 30px 6%;
+    text-align: center;
+    margin: 1px 0;
+    overflow: visible; 
+       
+}
+    
+    
+.ciencia h3 {
+    margin-bottom: 14px;
+    color: white;
+    font-size: 26px;
+}
+
+.ciencia p {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    color: white; /* Texto oscuro para contraste con fondo blanco */
+    line-height: 1.7;
+    text-align: justify;
+}
+
+ 
+    .ciencia .imagen {
+
+    width: 100vw; /* Hacer que ocupe el ancho completo de la ventana */
+    margin-left: calc(-50vw + 50%); /* Truco para centrar el viewport width */
+    margin-top: 30px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+    }
+
+
+.ciencia .imagen img {
+    
+
+   width: 100%;
+    max-width: 100vw; /* Limitar al ancho de la ventana */
+    height: auto;
+    display: block;
+}
+
+
+/* ====== RPA ====== */
+
+.rpa {
+    background: #285578;
+    padding: 40px 0;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.rpa .texto {
+    flex: 1;
+    text-align: left;
+    padding: 0 6%;
+}
+
+.rpa .texto h3 {
+    color: white;
+    margin-bottom: 15px;  /* Reducir espacio debajo del título */
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left; 
+    width: 100%; 
+}
+
+.rpa .texto p {
+    font-size: 17px;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.rpa .imagen {
+    flex: 1;
+    padding: 0 6% 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rpa .imagen img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 900px) {
+    .servicio,
+    .servicio.invertido {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px 15px;
+    }
+
+    .acerca {
+        padding: 40px 5%;
+    }
+    
+    .acerca p {
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    .servicio .imagen img,
+    .imagenacerca img,
+    .ciencia .imagen img,
+    .Inicio img {
+        max-height: none;
+    }
 }

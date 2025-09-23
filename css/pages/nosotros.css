@@ -29,7 +29,7 @@ body {
   }
 
   .about-section {
-    background-image: url("../images/Nosotros/Nosotros.jpg");
+    background-image: url("../../images/Nosotros/Nosotros.jpg");
     background-size: contain;   /* la ajusta sin deformarla */
     background-position: center;
     background-repeat: no-repeat;

@@ -85,7 +85,7 @@ body {
 
 /* Main Content */
 .main-content {
-    /* margin-top: 80px; */
+    margin-top: 80px;
     min-height: calc(100vh - 160px);
     padding: 2rem 0;
 }
