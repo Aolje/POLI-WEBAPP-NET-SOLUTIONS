@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         showNotification('Inicio de sesión exitoso', 'success');
                         // Redirigir al panel de administración
                         setTimeout(() => {
-                            window.location.href = '../admin/panel-admin.html';
+                            window.location.href = '../admin/index.html';
                         }, 1500);
                     } else {
                         showNotification('Solo los administradores pueden acceder', 'error');
