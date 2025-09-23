@@ -3,6 +3,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #2c3e50;
 }
+
+.main-content {
+    padding-top: 0px;
+}
   
 /* Títulos */
 h1, h2, h3 {
@@ -10,22 +14,23 @@ h1, h2, h3 {
     color: #285578;
     margin-bottom: 1rem;
 }
-  
-p {
+
+h2 {
+    font-family: 'Poppins', sans-serif;
     color: black;
-    line-height: 1.7;
-}
-  
-/* Banner */
-.about-banner {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: #f8f9fa;
-}
-  
-.about-banner h1 {
-    font-size: 2.5rem;
     margin-bottom: 1rem;
+}
+  
+.historia p {
+    color: white;
+    line-height: 1.7;
+    font-size: 30px;
+    padding-left: 180px;
+    padding-right: 180px;
+}
+
+.about-section h2 {
+  font-size: 50px;
 }
 
 .about-section {
@@ -42,7 +47,8 @@ p {
 }
   
 .about-section .about-content {
-    background: rgba(255, 255, 255, 0.8); /* opcional */
+    background: rgba(255, 255, 255 / 0%);
+    margin-right: 200px;
     padding: 20px;
     border-radius: 10px;
 }
@@ -57,6 +63,7 @@ p {
 
 .historia h2 {
     font-size: 2.2rem;
+    margin-top: 50px;
     margin-bottom: 50px;
     color: white;          
     text-transform: uppercase;
@@ -163,6 +170,17 @@ p {
       left: -30px;
     }
 }
+
+.timeline{
+    margin-top: 80px;
+}
+
+.historia .timeline-item h3, .historia .timeline-item p {
+    color: #000000;
+    font-size: 16px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
   
 /* Valores */
 .valores-section {
@@ -206,6 +224,7 @@ p {
   
 .valor-card p {
     font-size: 0.95rem;
+    color: #285578;
 }
   
 /* Responsivo About */
