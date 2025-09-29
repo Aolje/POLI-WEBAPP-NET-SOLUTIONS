@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Contactos - Panel de Administración</title>
+    <title>Gestión de Servicios - Panel de Administración</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/admin/admin.css">
+    <link rel="stylesheet" href="../css/admin/panel-admin.css">
     <style>
-        .contacts-container {
+        .services-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
 
-        .contacts-header {
+        .services-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -22,7 +24,22 @@
             gap: 1rem;
         }
 
-        .contacts-stats {
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+        }
+
+        .services-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
@@ -33,7 +50,7 @@
             background: white;
             padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
@@ -49,10 +66,10 @@
             font-size: 0.9rem;
         }
 
-        .contacts-table-container {
+        .services-table-container {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
@@ -67,25 +84,25 @@
             color: #2c3e50;
         }
 
-        .contacts-table {
+        .services-table {
             width: 100%;
             border-collapse: collapse;
         }
 
-        .contacts-table th,
-        .contacts-table td {
+        .services-table th,
+        .services-table td {
             padding: 1rem;
             text-align: left;
             border-bottom: 1px solid #dee2e6;
         }
 
-        .contacts-table th {
+        .services-table th {
             background: #f8f9fa;
             font-weight: 600;
             color: #2c3e50;
         }
 
-        .contacts-table tbody tr:hover {
+        .services-table tbody tr:hover {
             background: #f8f9fa;
         }
 
@@ -97,14 +114,14 @@
             text-transform: uppercase;
         }
 
-        .status-sin-responder {
-            background: #ffeaa7;
-            color: #d63031;
-        }
-
-        .status-respondido {
+        .status-activo {
             background: #d1f2eb;
             color: #00b894;
+        }
+
+        .status-inactivo {
+            background: #ffeaa7;
+            color: #d63031;
         }
 
         .action-buttons {
@@ -157,7 +174,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .modal-content {
@@ -231,6 +248,13 @@
             min-height: 100px;
         }
 
+        .form-help {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
         .modal-actions {
             display: flex;
             gap: 1rem;
@@ -268,24 +292,48 @@
             background: #7f8c8d;
         }
 
-        .no-contacts {
+        .no-services {
             text-align: center;
             padding: 3rem;
             color: #7f8c8d;
         }
 
-        .no-contacts h3 {
+        .no-services h3 {
             margin-bottom: 1rem;
             color: #2c3e50;
         }
 
+        .services-table-container {
+            overflow-x: auto;
+        }
+
+        .services-table {
+            min-width: 1000px;
+        }
+
+        .services-table td {
+            vertical-align: top;
+        }
+
+        .services-table td[title] {
+            cursor: help;
+        }
+
+        .service-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
         @media (max-width: 768px) {
-            .contacts-table {
+            .services-table {
                 font-size: 0.8rem;
+                min-width: 800px;
             }
 
-            .contacts-table th,
-            .contacts-table td {
+            .services-table th,
+            .services-table td {
                 padding: 0.5rem;
             }
 
@@ -298,109 +346,149 @@
                 width: 95%;
                 padding: 1rem;
             }
+
+            .services-stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Admin Navbar -->
-    <nav class="admin-navbar">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="../index.html">Mi Sitio Web - Admin</a>
+                <img src="../images/common/logo.png" alt="Logo">
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="../index.html" class="nav-link">Volver al Sitio</a>
                 </li>
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a href="content.html" class="nav-link">Contenido</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contacts.html" class="nav-link active">Contactos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="settings.html" class="nav-link">Configuración</a>
+                    <a href="./index.html" class="nav-link">Dashboard</a>
                 </li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="admin-main">
-        <div class="contacts-container">
-            <div class="contacts-header">
-                <h1>Gestión de Contactos</h1>
-                <button class="btn btn-primary" onclick="refreshContacts()">Actualizar</button>
+        <div class="services-container">
+            <div class="services-header">
+                <h1>Gestión de Servicios</h1>
+                <div class="header-actions">
+                    <button class="btn btn-success" onclick="openCreateModal()"> Crear Servicio</button>
+                </div>
             </div>
 
             <!-- Estadísticas -->
-            <div class="contacts-stats" id="contactsStats">
+            <div class="services-stats" id="servicesStats">
                 <!-- Se llenará dinámicamente -->
             </div>
 
-            <!-- Tabla de contactos -->
-            <div class="contacts-table-container">
+            <!-- Tabla de servicios -->
+            <div class="services-table-container">
                 <div class="table-header">
-                    <h3>Lista de Contactos</h3>
+                    <h3>Lista de Servicios</h3>
                 </div>
-                <div id="contactsTableContainer">
+                <div id="servicesTableContainer">
                     <!-- Se llenará dinámicamente -->
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Modal para editar contacto -->
+    <!-- Modal para crear servicio -->
+    <div id="createModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Crear Nuevo Servicio</h3>
+                <button class="close" onclick="closeCreateModal()">&times;</button>
+            </div>
+            <form id="createServiceForm">
+                <div class="form-group">
+                    <label for="createServiceImage">Imagen (URL):</label>
+                    <input type="url" id="createServiceImage" placeholder="https://ejemplo.com/imagen.jpg">
+                    <small class="form-help">Opcional: URL de la imagen del servicio</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="createServiceTitle">Título: *</label>
+                    <input type="text" id="createServiceTitle" required placeholder="Nombre del servicio">
+                </div>
+
+                <div class="form-group">
+                    <label for="createServiceDescription">Descripción: *</label>
+                    <textarea id="createServiceDescription" required
+                        placeholder="Descripción detallada del servicio..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="createServiceValue">Valor: *</label>
+                    <input type="number" id="createServiceValue" step="0.01" min="0" required placeholder="0.00">
+                    <small class="form-help">Precio del servicio en pesos colombianos</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="createServiceStatus">Estado:</label>
+                    <select id="createServiceStatus">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
+                    </select>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeCreateModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Crear Servicio</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para editar servicio -->
     <div id="editModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Editar Contacto</h3>
+                <h3>Editar Servicio</h3>
                 <button class="close" onclick="closeModal()">&times;</button>
             </div>
-            <form id="editContactForm">
-                <input type="hidden" id="editContactId">
-                
+            <form id="editServiceForm">
+                <input type="hidden" id="editServiceId">
+
                 <div class="form-group">
-                    <label for="editContactName">Nombre:</label>
-                    <input type="text" id="editContactName" readonly>
+                    <label for="editServiceImage">Imagen (URL):</label>
+                    <input type="url" id="editServiceImage" placeholder="https://ejemplo.com/imagen.jpg">
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="editContactEmail">Email:</label>
-                    <input type="email" id="editContactEmail" readonly>
+                    <label for="editServiceTitle">Título:</label>
+                    <input type="text" id="editServiceTitle" required>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="editContactPhone">Teléfono:</label>
-                    <input type="tel" id="editContactPhone" readonly>
+                    <label for="editServiceDescription">Descripción:</label>
+                    <textarea id="editServiceDescription" required placeholder="Descripción del servicio..."></textarea>
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="editContactSchedule">Horario de contacto:</label>
-                    <input type="text" id="editContactSchedule" readonly>
+                    <label for="editServiceValue">Valor:</label>
+                    <input type="number" id="editServiceValue" step="0.01" min="0" required placeholder="0.00">
                 </div>
-                
+
                 <div class="form-group">
-                    <label for="editContactMessage">Mensaje:</label>
-                    <textarea id="editContactMessage" readonly></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="editContactStatus">Estado:</label>
-                    <select id="editContactStatus">
-                        <option value="sin responder">Sin responder</option>
-                        <option value="respondido">Respondido</option>
+                    <label for="editServiceStatus">Estado:</label>
+                    <select id="editServiceStatus">
+                        <option value="activo">Activo</option>
+                        <option value="inactivo">Inactivo</option>
                     </select>
                 </div>
-                
-                <div class="form-group">
-                    <label for="editContactComment">Comentario del administrador:</label>
-                    <textarea id="editContactComment" placeholder="Agregar comentarios sobre este contacto..."></textarea>
-                </div>
-                
+
                 <div class="modal-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
@@ -410,6 +498,7 @@
     </div>
 
     <script src="../js/main.js"></script>
-    <script src="../js/admin/contacts.js"></script>
+    <script src="../js/admin/tabla-servicios.js"></script>
 </body>
+
 </html>

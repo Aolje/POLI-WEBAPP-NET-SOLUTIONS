@@ -28,3 +28,6 @@ package-lock.json
 # Archivos de respaldo
 *.bak
 *.backup
+
+*.zip
+*.rar
