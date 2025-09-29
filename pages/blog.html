@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/pages/blog.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-               <img src="../images/common/logo.png" alt="Logo">
+                <img src="../images/common/logo.png" alt="Logo">
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -43,32 +45,68 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <h1>Blog</h1>
-            <div class="blog-categories">
-                <div class="blog-category">
-                    <h3>Categoría 1</h3>
-                    <p>Descripción de la categoría 1</p>
-                    <a href="blog/categoria1.html" class="btn">Ver artículos</a>
-                </div>
-                <div class="blog-category">
-                    <h3>Categoría 2</h3>
-                    <p>Descripción de la categoría 2</p>
-                    <a href="blog/categoria2.html" class="btn">Ver artículos</a>
-                </div>
-                <div class="blog-category">
-                    <h3>Categoría 3</h3>
-                    <p>Descripción de la categoría 3</p>
-                    <a href="blog/categoria3.html" class="btn">Ver artículos</a>
-                </div>
-                <div class="blog-category">
-                    <h3>Categoría 4</h3>
-                    <p>Descripción de la categoría 4</p>
-                    <a href="blog/categoria4.html" class="btn">Ver artículos</a>
-                </div>
+    <main class="page">
+        <section class="hero" role="banner" aria-label="Portada del blog"
+            style="background-image:url('../images/blog/BLOG.jpg');">
+            <h1 class="hero-title">BLOG</h1>
+        </section>
+
+        <!-- Grid de tarjetas -->
+        <section class="wrap" aria-label="Entradas destacadas">
+            <div class="grid">
+                <!-- Tarjeta 1 -->
+                <article class="card" tabindex="0">
+                    <div class="thumb">
+                        <img src="../images/blog/BLOG1.png" />
+                        <a class="stretched-link" href="../pages/blog/categoria1.html"
+                            aria-label="Leer Servicio ISO 45001"></a>
+                    </div>
+                    <div class="card-body">
+                        <p class="kicker">Servicio</p>
+                        <h2 class="title">ISO 45001 – Sistema de Gestión de Seguridad y Salud en el Trabajo (SST)</h2>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 2 -->
+                <article class="card" tabindex="0">
+                    <div class="thumb">
+                        <img src="../images/blog/BLOG2.png" alt="Iconos de ciberseguridad y protección de datos" />
+                        <a class="stretched-link" href="../pages/blog/categoria2.html"
+                            aria-label="Leer Servicio ISO 27001"></a>
+                    </div>
+                    <div class="card-body">
+                        <p class="kicker">Servicio</p>
+                        <h2 class="title">ISO 27001 – Sistema de Gestión de Seguridad de la Información</h2>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 3 -->
+                <article class="card" tabindex="0">
+                    <div class="thumb">
+                        <img src="../images/blog/BLOG3.png" alt="Manos sosteniendo tableta con controles ambientales" />
+                        <a class="stretched-link" href="servicio-iso-14001.html"
+                            aria-label="Leer Servicio ISO 14001"></a>
+                    </div>
+                    <div class="card-body">
+                        <p class="kicker">Servicio</p>
+                        <h2 class="title">ISO 14001 – Sistema de Gestión Ambiental</h2>
+                    </div>
+                </article>
+
+                <!-- Tarjeta 4 -->
+                <article class="card" tabindex="0">
+                    <div class="thumb">
+                        <img src="../images/blog/BLOG4.png" alt="Interfaz con engranajes y automatización RPA" />
+                        <a class="stretched-link" href="articulo-rpa.html"
+                            aria-label="Leer Reducción de costos con RPA"></a>
+                    </div>
+                    <div class="card-body">
+                        <p class="kicker">Artículo</p>
+                        <h2 class="title">Reducción de costos con RPA: ¿Cómo lograrlo en tu empresa?</h2>
+                    </div>
+                </article>
             </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -98,4 +136,5 @@
     <script src="../js/main.js"></script>
     <script src="../js/pages/blog.js"></script>
 </body>
+
 </html>

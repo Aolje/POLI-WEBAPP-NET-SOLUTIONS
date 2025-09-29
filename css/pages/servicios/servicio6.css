@@ -1,70 +1,116 @@
-/* Estilos específicos para Servicio 6 */
-.service-detail {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    color: #2c3e50;
-    padding: 3rem;
-    border-radius: 12px;
-    margin-top: 2rem;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+.service-image-1-1 {
+    width: 100%;
+    max-width: 110vw;
+    height: 30vw;
+    max-height: 78vw;
 }
 
-.service-detail h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
+.text-image {
+    position: relative;
+    display: flex;
+    margin-bottom: 29px;
 }
 
-.service-detail p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #34495e;
+/* .service-image-2-2 {
+    position: relative;
+    display: flex;
+    width: 38vw;
+    max-width: 52vw;
+    height: 24vw;
+    max-height: 39vw;
+    padding-top: 3rem;
+} */
+
+.text-one {
+    position: relative;
+    display: flex;
+    text-align: justify;
+    font-size: 22px;
 }
 
-.service-contact {
-    background: rgba(255,255,255,0.7);
-    padding: 2rem;
-    border-radius: 8px;
-    margin-top: 2rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.3);
+.text-two {
+    position: relative;
+    display: flex;
+    white-space: pre-line;
+    font-size: 24px;
+    text-align: start;
 }
 
-.contact-methods {
+.text-three {
+    position: relative;
+    display: flex;
+    white-space: pre-line;
+    font-size: 23px;
+    text-align: left;
+}
+
+.beneficios-del-servicio {
+    padding-top: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle-beneficios-del-servicio-1 {
+    font-size: 33px;
+    color: #fff;
+}
+
+.parrafo-beneficios-del-servicio-1 {
+    position: relative;
+    display: flex;
+    white-space: pre-line;
+    font-size: 22px;
+    text-align: center;
+}
+
+
+.services-grid-service-1 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
-.contact-method {
-    text-align: center;
-    padding: 1.5rem;
-    background: rgba(255,255,255,0.5);
+.service-card-service-1 {
+    /* background: white; */
+    /* padding: 2rem; */
+    padding-top: 2rem;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    margin-bottom: 6rem;
 }
 
-.contact-method:hover {
-    transform: translateY(-3px);
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.contact-method h4 {
-    color: #2c3e50;
+.service-card h3 {
+    /* color: #2c3e50; */
+    color: #fff;
     margin-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 2rem;
+    white-space: pre-line;
 }
 
-.contact-method p {
-    color: #34495e;
-    margin-bottom: 0.5rem;
+.service-card p {
+    /* color: #7f8c8d; */
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
-.contact-method a {
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-method a:hover {
-    text-decoration: underline;
+.service1-image-1,
+.service1-image-2,
+.service1-image-3,
+.service1-image-4 {
+    width: 12vw;
+    max-width: 45vw;
+    height: 12vw;
+    max-height: 35vw;
 }

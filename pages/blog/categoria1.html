@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../../css/pages/blog.css">
     <link rel="stylesheet" href="../../css/pages/blog/categoria1.css">
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -44,22 +46,44 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../blog.html">Blog</a> > <span>Categoría 1</span>
+    <main class="service" aria-label="Servicio ISO 45001">
+        <!-- Hero (imagen de portada del servicio) -->
+        <section class="hero" role="banner" style="background-image:url('../../images/blog/BLOG5.png');">
+            <h1 class="hero-title">
+                Servicio ISO 45001 – Sistema de Gestión de Seguridad y Salud en el Trabajo (SST)
+            </h1>
+        </section>
+
+        <!-- DESCRIPCIÓN -->
+        <section class="panel" aria-labelledby="desc-title">
+            <h2 id="desc-title" class="panel-title">Descripción</h2>
+            <div class="panel-body">
+                <p>
+                    Diseñamos e implementamos el Sistema de Gestión de Seguridad y Salud en el Trabajo
+                    basado en la norma <strong>ISO 45001</strong>, con enfoque preventivo que protege la
+                    integridad física y mental de los trabajadores, garantiza el cumplimiento normativo
+                    y promueve una cultura de seguridad en toda la organización.
+                </p>
             </div>
-            <h1>Categoría 1</h1>
-            <div class="blog-posts">
-                <article class="blog-post">
-                    <h2>Artículo 1</h2>
-                    <p>Contenido del primer artículo de la categoría 1.</p>
-                </article>
-                <article class="blog-post">
-                    <h2>Artículo 2</h2>
-                    <p>Contenido del segundo artículo de la categoría 1.</p>
-                </article>
+        </section>
+
+        <!-- BENEFICIOS -->
+        <section class="panel" aria-labelledby="benef-title">
+            <h2 id="benef-title" class="panel-title">Beneficios</h2>
+            <div class="panel-body">
+                <ul class="benefits">
+                    <li>Reducción de accidentes laborales y enfermedades ocupacionales.</li>
+                    <li>Cumplimiento de la legislación en seguridad y salud en el trabajo.</li>
+                    <li>Disminución de costos asociados a ausentismo, sanciones y compensaciones.</li>
+                    <li>Mejora del clima laboral y bienestar del talento humano.</li>
+                    <li>Fortalecimiento de la imagen institucional como organización responsable.</li>
+                </ul>
             </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta">
+            <a class="btn-cta" href="../contacto.html">Contactar</a>
         </div>
     </main>
 
@@ -91,4 +115,5 @@
     <script src="../../js/pages/blog.js"></script>
     <script src="../../js/pages/blog/categoria1.js"></script>
 </body>
+
 </html>
