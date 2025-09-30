@@ -1,4 +1,4 @@
-# Mi Sitio Web
+# NetSolutions
 
 Sitio web básico desarrollado con HTML, CSS y JavaScript vanilla.
 
