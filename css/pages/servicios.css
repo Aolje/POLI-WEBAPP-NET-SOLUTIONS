@@ -1,9 +1,16 @@
-/* Estilos específicos para la página Servicios */
+.main-content-services {
+    min-height: calc(100vh - 160px);
+    padding: 2rem 0;
+}
+
 body {
-    /* background: #285578; */
     background: rgb(40, 85, 120);
     min-height: 100vh;
     color: white;
+}
+
+.container-services {
+    width: 100%;
 }
 
 .services-section {
@@ -11,22 +18,20 @@ body {
 }
 
 .services-grid {
+    margin: auto;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .service-card {
-    /* background: white; */
-    /* padding: 2rem; */
     padding-top: 2rem;
     border-radius: 8px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-
-    margin-bottom: 6rem;
+    margin-bottom: 1rem;
 }
 
 .service-card:hover {
@@ -35,7 +40,6 @@ body {
 }
 
 .service-card h3 {
-    /* color: #2c3e50; */
     color: #fff;
     margin-bottom: 1rem;
     font-size: 2rem;
@@ -43,48 +47,20 @@ body {
 }
 
 .service-card p {
-    /* color: #7f8c8d; */
     color: #ffffff;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
 
-/* .service-detail {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
-}
-
-.service-detail h2 {
-    color: #2c3e50;
-    margin-bottom: 1rem;
-}
-
-.service-detail p {
-    color: #7f8c8d;
-    line-height: 1.8;
-    font-size: 1.1rem;
-} */
-
-.service-image-1 {
-    width: 100%;
-    max-width: 110vw;
-    height: 30vw;
-    max-height: 78vw;
-}
-
+.service-image-1,
 .service-image-2,
 .service-image-3,
 .service-image-4,
 .service-image-5,
 .service-image-6,
 .service-image-7 {
-    width: 35vw;
-    max-width: 45vw;
-    height: 20vw;
-    max-height: 35vw;
+    width: 100%;
+    border-radius: 20px;
 }
 
 .service-image-8 {
@@ -109,7 +85,6 @@ body {
     color: #fff;
     position: relative;
     display: flex;
-
     justify-content: center;
 }
 
@@ -134,10 +109,8 @@ body {
     width: 100%;
 }
 
-/* Botones */
 .btn-contact {
     display: inline-block;
-    /* background-color: #3498db; */
     background: rgb(6, 28, 48);
     color: white;
     padding: 0.75rem 1.5rem;
@@ -152,6 +125,5 @@ body {
 }
 
 .btn-contact:hover {
-    /* background-color: #2980b9; */
     background: rgb(6, 28, 48);
 }
