@@ -63,6 +63,21 @@ body {
     border-radius: 20px;
 }
 
+.service-image-888 {
+    width: 100%;
+    max-width: 110vw;
+    height: 25.8vw;
+    max-height: 78vw;
+    border-radius: 20px;
+}
+.service-image-1010 {
+    width: 100%;
+    max-width: 110vw;
+    height: 23.3vw;
+    max-height: 78vw;
+    border-radius: 20px;
+}
+
 .service-image-8 {
     width: 100%;
     max-width: 110vw;
