@@ -361,4 +361,39 @@ body {
     .Inicio img {
         max-height: none;
     }
+
+    
+}
+
+/* Efecto suave para imágenes: zoom y sombra ligeros */
+.img-zoom {
+  transition: transform .35s ease, box-shadow .35s ease;
+  transform-origin: center center;
+}
+.img-zoom:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .img-zoom { transition: none; }
+}
+
+
+/* Hace que un bloque se salga del contenedor y ocupe todo el ancho de la ventana */
+.full-bleed {
+  width: 100vw;                 /* ocupa todo el viewport */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;           /* compensa el centro del contenedor */
+  margin-right: -50vw;
+}
+
+.full-bleed > img,
+.full-bleed .imagen > img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
