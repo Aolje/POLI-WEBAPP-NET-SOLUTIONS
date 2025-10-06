@@ -109,7 +109,7 @@
 }
 
 /* Lista de beneficios */
-.service .benefits{ margin:0; padding-left:22px; list-style:disc; list-style-position:outside }
+.service .benefits{ margin:0; padding-left:22px; list-style:disc; list-style-position:outside } 
 .service .benefits li{ margin:10px 0 }
 .service .benefits li::marker{ color:#fff }
 
