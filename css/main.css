@@ -20,15 +20,27 @@ body {
 }
 
 .container {
+    
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Navbar */
+/* Navbar - Mayor especificidad para evitar conflictos con Bootstrap */
+.navbar.navbar-custom {
+    background-color: #fff !important;
+    padding: 1rem 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Fallback para compatibilidad */
 .navbar {
     background-color: #fff;
-    /* padding: 1rem 0; */
+    padding: 1rem 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -37,6 +49,7 @@ body {
 }
 
 .nav-container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
