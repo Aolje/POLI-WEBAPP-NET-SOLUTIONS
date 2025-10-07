@@ -20,11 +20,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Servicios - Panel de Administración</title>
-    
+
     <!-- Enlaces a hojas de estilo -->
-    <link rel="stylesheet" href="../css/main.css">                    <!-- Estilos principales del sitio -->
-    <link rel="stylesheet" href="../css/admin/admin.css">             <!-- Estilos específicos del panel admin -->
-    <link rel="stylesheet" href="../css/admin/tabla-servicios.css">   <!-- Estilos específicos de esta página -->
+    <link rel="stylesheet" href="../css/main.css"> <!-- Estilos principales del sitio -->
+    <link rel="stylesheet" href="../css/admin/admin.css"> <!-- Estilos específicos del panel admin -->
+    <link rel="stylesheet" href="../css/admin/tabla-servicios.css"> <!-- Estilos específicos de esta página -->
 </head>
 
 <body>
@@ -39,7 +39,7 @@
             <div class="nav-logo">
                 <img src="../images/common/logo.png" alt="Logo">
             </div>
-            
+
             <!-- Menú de navegación -->
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -49,6 +49,12 @@
                     <a href="./index.html" class="nav-link">Dashboard</a>
                 </li>
             </ul>
+            <!-- Botón hamburguesa (visible en móvil) -->
+            <div class="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
 
@@ -112,7 +118,7 @@
                 <h3>Crear Nuevo Servicio</h3>
                 <button class="close" onclick="closeCreateModal()">&times;</button>
             </div>
-            
+
             <!-- Formulario de creación -->
             <form id="createServiceForm">
                 <!-- 
@@ -171,7 +177,7 @@
                 <h3>Editar Servicio</h3>
                 <button class="close" onclick="closeModal()">&times;</button>
             </div>
-            
+
             <!-- Formulario de edición -->
             <form id="editServiceForm">
                 <!-- Campo oculto para almacenar el ID del servicio -->
@@ -221,7 +227,7 @@
     <!-- 
         SCRIPTS: Archivos JavaScript que proporcionan la funcionalidad de la página
     -->
-    <script src="../js/main.js"></script>                    <!-- Script principal del sitio -->
+    <script src="../js/main.js"></script> <!-- Script principal del sitio -->
     <script src="../js/admin/tabla-servicios.js"></script> <!-- Script específico para gestión de servicios -->
 </body>
 
