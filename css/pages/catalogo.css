@@ -1,4 +1,27 @@
-/* ===== HERO ===== */
+/* 
+====================================================================
+HOJA DE ESTILOS: catalogo.css
+Propósito:
+  - Definir el estilo de la página de Catálogo (catalogo.html).
+  - Mantener coherencia visual con el resto del sitio: tipografías,
+    colores y espaciados.
+  - Dar soporte al buscador, ordenamiento, grilla de tarjetas y
+    paginación.
+Dependencias:
+  - Bootstrap 5 para grilla base y utilidades.
+  - Fuentes: Montserrat y Poppins (definidas en main.css/HTML).
+Notas:
+  - El contenedor .catalogo-grid puede funcionar con Bootstrap (.row)
+    o como CSS Grid. La regla final `:not(.row)` activa Grid solo si
+    no se usa la clase .row (flexibilidad para el JS).
+====================================================================
+*/
+
+/* ================================================================
+HERO
+- Fondo azul de marca y tipografías de alto contraste (blanco).
+- Título con tamaño fluido (clamp) y subtítulo legible.
+================================================================ */
 .catalogo-hero {
   background-color: #1f4c68;
   padding: 3.25rem 1rem 1.25rem;
@@ -23,7 +46,11 @@
   margin: 0;
 }
 
-/* ===== CONTROLES ===== */
+/* ================================================================
+CONTROLES (BUSCADOR + ORDEN)
+- Inputs de texto y select con bordes suaves y radio generoso.
+- Enfasis en foco (border-color) para mejorar usabilidad.
+================================================================ */
 .catalogo-controles {
   padding: .75rem 0 1rem;
 }
@@ -56,14 +83,21 @@
   border-color: #0a2234;
 }
 
-/* ===== GRID ===== */
+/* ================================================================
+GRID DEL CATÁLOGO
+- Ancho máximo y padding lateral suave para aire visual.
+================================================================ */
 .catalogo-grid {
   max-width: 1120px;
   margin: 1rem auto 2rem;
   padding: 0 16px;
 }
 
-/* ===== TARJETA (modo legible) ===== */
+/* ================================================================
+TARJETAS DE SERVICIO
+- Tarjeta limpia con borde suave y transición sutil en hover.
+- Modo clickeable (cursor/presión) pensado para abrir detalle o demo.
+================================================================ */
 .card-servicio {
   background: #fff;
   border: 1px solid #e8eef3;
@@ -80,7 +114,7 @@
   box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
 }
 
-/* Estilos para tarjetas clickeables */
+/* Comportamiento clickeable de la tarjeta */
 .card-servicio {
   cursor: pointer;
   user-select: none;
@@ -91,7 +125,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
 }
 
-/* Icono */
+/* Icono superior centrado */
 .card-servicio__icono {
   display: grid;
   place-items: center;
@@ -107,8 +141,7 @@
 
 /* Cuerpo en UNA columna: título, precio, promo, descripción */
 .card-servicio__row {
-  display: block;
-  /* <- sin columnas */
+  display: block; /* sin columnas */
   padding: 0 18px;
   flex: 1 1 auto;
   box-sizing: border-box;
@@ -132,8 +165,7 @@
   color: #0a1e2d;
   font-size: 1rem;
   text-align: right;
-  white-space: nowrap;
-  /* no parte el precio */
+  white-space: nowrap; /* no parte el precio */
 }
 
 .promo {
@@ -164,7 +196,7 @@
   hyphens: auto;
 }
 
-/* CTA */
+/* CTA (área de acción) */
 .card-servicio__cta {
   display: flex;
   justify-content: flex-end;
@@ -195,7 +227,10 @@
   opacity: .95;
 }
 
-/* ===== PAGINACIÓN ===== */
+/* ================================================================
+PAGINACIÓN
+- Lista centrada con botones de página y estado activo.
+================================================================ */
 .catalogo-paginacion {
   display: flex;
   justify-content: center;
@@ -228,7 +263,10 @@
   color: #fff;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ================================================================
+RESPONSIVE
+- Ajustes para columnas de controles y CTA en pantallas pequeñas.
+================================================================ */
 @media (max-width:900px) {
   .catalogo-controles__inner {
     grid-template-columns: 1fr;
@@ -241,6 +279,10 @@
   }
 }
 
+/* 
+Si NO usas .row de Bootstrap en .catalogo-grid, activa CSS Grid
+de forma automática (ajuste responsivo fluido).
+*/
 .catalogo-grid:not(.row) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

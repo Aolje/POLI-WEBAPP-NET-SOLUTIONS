@@ -5,10 +5,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo - NetSolutions</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- BOOTSTRAP CSS (grilla, helpers visuales) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
   <!-- Estilos globales + estilos de la página -->
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/pages/catalogo.css">
+
   <!-- Importar fuentes de Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,8 +22,38 @@
     rel="stylesheet" />
 </head>
 
+<!--
+  ================================================================
+  PÁGINA: Catálogo (catalogo.html)
+  PROPÓSITO:
+    - Listar y explorar los servicios disponibles con buscador,
+      ordenamiento y paginación.
+  DEPENDENCIAS:
+    - Bootstrap 5 (CSS/JS) para grilla y utilidades.
+    - Hojas de estilo: ../css/main.css y ../css/pages/catalogo.css.
+    - Fuentes Google (Montserrat, Poppins) para títulos y textos.
+    - JS: ../js/main.js (comportamiento global) y
+          ../js/pages/catalogo.js (lógica del catálogo: carga de
+          tarjetas, búsqueda, orden y paginación).
+  NOTAS:
+    - El grid de tarjetas se inyecta por JavaScript en #catalogo-grid.
+    - La paginación se construye dinámicamente en #catalogo-paginacion.
+  ================================================================
+-->
+
 <body>
-  <!-- Navbar -->
+  <!--
+    ================================================================
+    NAVBAR
+    - Cabecera con logo y navegación principal del sitio.
+    - Estructura:
+        .nav-container -> logo + menú
+        .nav-menu      -> enlaces a secciones/páginas
+        .hamburger     -> botón para menú móvil (controlado por main.js)
+    - La clase 'active' señala la página actual (Catálogo).
+    - Accesibilidad: se agregan aria-label/role/tabindex en hamburguesa.
+    ================================================================
+  -->
   <nav class="navbar">
     <div class="nav-container">
       <div class="nav-logo">
@@ -26,7 +61,7 @@
       </div>
       <ul class="nav-menu">
         <li class="nav-item">
-          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../index.html" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item">
           <a href="nosotros.html" class="nav-link">Nosotros</a>
@@ -50,19 +85,35 @@
     </div>
   </nav>
 
-  <!-- ===== MAIN ===== -->
+  <!--
+    ================================================================
+    CONTENIDO PRINCIPAL (MAIN)
+    - Hero con título y texto introductorio del catálogo.
+    - Controles (buscador + orden) siguiendo el diseño del mockup.
+    - Grid de tarjetas poblado por JS y paginación dinámica.
+    ================================================================
+  -->
   <main class="main-content">
-    <!-- HERO (fondo azul, título blanco grande) -->
+    <!--
+      HERO
+      - Fondo azul, tipografías de marca y foco en el título.
+      - Mensaje de bienvenida al catálogo.
+    -->
     <section class="catalogo-hero">
       <div class="catalogo-hero__inner container text-center">
         <h1>Catálogo de servicios</h1>
         <p>Explora nuestras soluciones y selecciona lo que necesitas.</p>
       </div>
 
-      <!-- Controles dentro del hero (según mockup) -->
+      <!--
+        CONTROLES DEL CATÁLOGO
+        - Buscador de texto libre + selector de orden.
+        - JS escucha cambios para filtrar/ordenar resultados.
+      -->
       <div class="catalogo-controles">
         <div class="catalogo-controles__inner container">
-          <input id="catalogo-buscar" type="search" class="form-control" placeholder="Buscar servicio o palabra clave…">
+          <input id="catalogo-buscar" type="search" class="form-control" placeholder="Buscar servicio o palabra clave…"
+            aria-label="Buscar servicio o palabra clave">
           <select id="catalogo-orden" class="form-select" aria-label="Ordenar resultados">
             <option value="relevancia">Ordenar por: Relevancia</option>
             <option value="nombre-asc">Nombre: A → Z</option>
@@ -74,7 +125,11 @@
       </div>
     </section>
 
-    <!-- GRID DE TARJETAS -->
+    <!--
+      GRID DE TARJETAS
+      - Contenedor destino para renderizar tarjetas (JS).
+      - Usa Bootstrap: .row + .g-4 para separación visual uniforme.
+    -->
     <section class="py-3">
       <div class="container">
         <section class="catalogo-grid row g-4" id="catalogo-grid">
@@ -83,16 +138,25 @@
       </div>
     </section>
 
-    <!-- PAGINACIÓN -->
+    <!--
+      PAGINACIÓN
+      - Navegación entre páginas de resultados generada por JS.
+      - Se presenta centrada y con estilos del proyecto.
+    -->
     <section class="catalogo-paginacion py-2">
       <div class="container">
         <ul id="catalogo-paginacion" class="paginacion d-flex justify-content-center"></ul>
       </div>
     </section>
-
   </main>
 
-  <!-- ===== FOOTER (copiado del patrón de tus páginas) ===== -->
+  <!--
+    ================================================================
+    FOOTER
+    - Información de contacto y logotipo.
+    - Íconos sociales como imágenes locales.
+    ================================================================
+  -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-left">
@@ -116,12 +180,21 @@
     </div>
   </footer>
 
-  <!-- JS global + JS de la página -->
-
-  <!-- BOOTSTRAP JS (solo para catálogo) -->
+  <!--
+    ================================================================
+    SCRIPTS
+    - Orden recomendado:
+        1) Bootstrap bundle (con Popper).
+        2) main.js (lógica global de navegación/menú responsive).
+        3) catalogo.js (carga de datos, filtrado, orden, paginación).
+    - Nota: catalogo.js debe leer/inyectar en #catalogo-grid y
+      #catalogo-paginacion, y escuchar cambios en #catalogo-buscar
+      y #catalogo-orden.
+    ================================================================
+  -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
   <script src="../js/main.js"></script>
   <script src="../js/pages/catalogo.js"></script>
 </body>
