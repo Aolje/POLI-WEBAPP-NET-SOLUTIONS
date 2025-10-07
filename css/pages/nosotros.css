@@ -204,7 +204,7 @@ h2 {
 }
   
 .valor-card {
-    background: #fff;
+    background: #285578;
     border-radius: 8px;
     padding: 2rem;
     text-align: center;
@@ -218,13 +218,14 @@ h2 {
 }
   
 .valor-card h3 {
-    color: #2c3e50;
+    color: white;
     margin-bottom: 1rem;
+    font-size: 25px;
 }
   
 .valor-card p {
-    font-size: 0.95rem;
-    color: #285578;
+    font-size: 20px;
+    color: #1E191C;
 }
   
 /* Responsivo About */
@@ -256,4 +257,13 @@ h2 {
 .historia .timeline-item h3,
 .historia .timeline-item p {
   color: #000000;
+}
+
+.valor-card .valor-img {
+  width: 220px;           /* tamaño fijo para todas las imágenes */
+  height: 220px;          /* mantiene proporción uniforme */
+  object-fit: cover;      /* recorta en lugar de deformar */
+  display: block;
+  margin: 0 auto 1rem auto; /* centra la imagen y deja espacio debajo */ /* opcional: fondo suave */
+  padding: 5px;            /* opcional: pequeño borde interior */
 }
