@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 phone: '3001234567',
                 email: 'juan.perez@email.com',
                 schedule: '2:00 PM',
-                message: 'Necesito ayuda con el diseño de mi sitio web. ¿Tienen disponibilidad para una reunión esta semana?',
+                message: 'Necesito ayuda con el diseño de NetSolutions. ¿Tienen disponibilidad para una reunión esta semana?',
                 status: 'respondido',
                 comment: 'Cliente interesado en servicios de diseño. Programar reunión para el viernes.',
                 createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),

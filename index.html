@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio - Mi Sitio Web</title>
+    <title>Inicio - NetSolutions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/pages/home.css">
     <!-- Importar fuentes de Google -->
@@ -37,107 +41,170 @@
                     <a href="pages/blog.html" class="nav-link">Blog</a>
                 </li>
                 <li class="nav-item">
+                    <a href="pages/catalogo.html" class="nav-link">Catálogo</a>
+                </li>
+                <li class="nav-item">
                     <a href="pages/contacto.html" class="nav-link">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a href="pages/login.html" class="nav-link">Login</a>
                 </li>
             </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-
+        <!-- ====== INICIO ====== -->
         <section class="Inicio">
-            <img src="./images/inicio/Inicio.jpg" alt="Transformación Digital">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-12 overflow-hidden">
+                        <img src="./images/inicio/Inicio.jpg" alt="Transformación Digital"
+                            class="img-fluid d-block w-100 img-zoom" />
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- ====== ACERCA DE NOSOTROS ====== -->
-        <section class="acerca">
-            <h2>ACERCA DE NETSOLUTIONS</h2>
-            <p>
-                Con más de 20 años de experiencia, en NETSOLUTIONS somos el aliado ideal para liderar la transformación
-                tecnológica de tu organización.
-                Acompañamos a empresas en el cumplimiento de sus objetivos a través de soluciones integrales, claras y
-                accionables, basadas en tecnología, automatización e inteligencia artificial. Evolucionamos
-                constantemente junto al mercado, anticipándonos a las tendencias y diseñando estrategias que generan
-                impacto real, escalable y sostenible. Porque transformar no es una opción, es una necesidad, y estamos
-                aquí para hacerlo contigo.
-            </p>
+        <section class="acerca py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                        <h2>ACERCA DE NETSOLUTIONS</h2>
+                        <p data-aos="fade-up" data-aos-delay="100">
+                            Con más de 20 años de experiencia, en NETSOLUTIONS somos el
+                            aliado ideal para liderar la transformación tecnológica de tu
+                            organización. Acompañamos a empresas en el cumplimiento de sus
+                            objetivos a través de soluciones integrales, claras y
+                            accionables, basadas en tecnología, automatización e
+                            inteligencia artificial. Evolucionamos constantemente junto al
+                            mercado, anticipándonos a las tendencias y diseñando estrategias
+                            que generan impacto real, escalable y sostenible. Porque
+                            transformar no es una opción, es una necesidad, y estamos aquí
+                            para hacerlo contigo.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- ====== IMAGEN ACERCA ====== -->
         <section class="imagenacerca">
-            <img src="./images/inicio/inicio7.webp" alt="Transformación Digital 2">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-12 overflow-hidden">
+                        <img src="./images/inicio/inicio7.webp" alt="Transformación Digital 2"
+                            class="img-fluid d-block w-100 img-zoom" />
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- ====== AUTOMATIZACIÓN ====== -->
-        <section class="servicio">
-            <div class="imagen">
-                <img src="./images/inicio/Inicio3.jpg" alt="Automatización">
-            </div>
-            <div class="texto">
-                <h3>AUTOMATIZACIÓN DE PROCESOS</h3>
-                <p>
-                    Optimizamos y transformamos los procesos de negocio a través de la Automatización Robótica de
-                    Procesos (RPA), permitiendo a las empresas reducir costos operativos, mejorar la productividad y
-                    minimizar errores humanos.
-                </p>
+        <section class="servicio py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-lg-6 overflow-hidden">
+                        <div class="imagen">
+                            <img src="./images/inicio/Inicio3.jpg" alt="Automatización"
+                                class="img-fluid d-block w-100 img-zoom" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="texto">
+                            <h3>AUTOMATIZACIÓN DE PROCESOS</h3>
+                            <p data-aos="fade-up" data-aos-delay="100">
+                                Optimizamos y transformamos los procesos de negocio a través
+                                de la Automatización Robótica de Procesos (RPA), permitiendo a
+                                las empresas reducir costos operativos, mejorar la
+                                productividad y minimizar errores humanos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ====== DISEÑO Y TRANSFORMACIÓN ====== -->
-        <section class="diseño">
-            <div class="imagen">
-                <img src="./images/inicio/inicio4.png" alt="Diseño de procesos">
-            </div>
-            <div class="texto">
-                <h3>DISEÑO Y TRANSFORMACIÓN DE PROCESOS</h3>
-                <p>
-                    Diseñamos e implementamos procesos de back-office eficientes y escalables, permitiendo a las
-                    empresas optimizar sus operaciones y enfocarse en su estrategia de negocio. Nuestra experiencia en
-                    gestión operativa garantiza mayor eficiencia, cumplimiento normativo y reducción de costos
-                    administrativos.
-                </p>
+        <section class="diseño py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-lg-6 order-lg-2 overflow-hidden">
+                        <div class="imagen">
+                            <img src="./images/inicio/inicio4.png" alt="Diseño de procesos"
+                                class="img-fluid d-block w-100 img-zoom" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 order-lg-1">
+                        <div class="texto">
+                            <h3>DISEÑO Y TRANSFORMACIÓN DE PROCESOS</h3>
+                            <p data-aos="fade-up" data-aos-delay="100">
+                                Diseñamos e implementamos procesos de back-office eficientes y
+                                escalables, permitiendo a las empresas optimizar sus
+                                operaciones y enfocarse en su estrategia de negocio. Nuestra
+                                experiencia en gestión operativa garantiza mayor eficiencia,
+                                cumplimiento normativo y reducción de costos administrativos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ====== CIENCIA DE DATOS ====== -->
-        <section class="ciencia">
-            <h3>CIENCIA DE DATOS</h3>
-            <p>
-                Convertimos los datos de tu empresa en información valiosa para la toma de decisiones estratégicas. A
-                través de técnicas de análisis, modelado predictivo y visualización de datos, te ayudamos a descubrir
-                patrones, identificar oportunidades y anticiparte a los cambios del mercado.
-                Aplicamos herramientas y metodologías de Data Science para que puedas entender mejor tu operación, tus
-                clientes y tu entorno, tomando decisiones basadas en datos y no en suposiciones.
-            </p>
-            <div class="imagen">
-                <img src="./images/inicio/Inicio5.jpg" alt="Ciencia de Datos">
+        <section class="ciencia py-5">
+            <div class="container">
+                <div class="row justify-content-center g-3">
+                    <div class="col-12 col-lg-10">
+                        <h3>CIENCIA DE DATOS</h3>
+                        <p data-aos="fade-up" data-aos-delay="100">
+                            Convertimos los datos de tu empresa en información valiosa para
+                            la toma de decisiones estratégicas. A través de técnicas de
+                            análisis, modelado predictivo y visualización de datos, te
+                            ayudamos a descubrir patrones, identificar oportunidades y
+                            anticiparte a los cambios del mercado. Aplicamos herramientas y
+                            metodologías de Data Science para que puedas entender mejor tu
+                            operación, tus clientes y tu entorno, tomando decisiones basadas
+                            en datos y no en suposiciones.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="full-bleed">
+                <div class="imagen">
+                    <img src="./images/inicio/Inicio5.jpg" alt="Ciencia de Datos"
+                        class="img-fluid d-block w-100 img-zoom" />
+                </div>
+
+
             </div>
         </section>
 
         <!-- ====== RPA ====== -->
-        <section class="rpa">
-            <div class="imagen">
-                <img src="./images/inicio/Inicio6.jpg" alt="RPA">
-            </div>
-            <div class="texto">
-                <h3>AUTOMATIZACIÓN INTELIGENTE DE PROCESOS CON RPA</h3>
-                <p>
-                    Optimizamos y transformamos los procesos de negocio a través de la Automatización Robótica de
-                    Procesos (RPA), permitiendo a las empresas reducir costos operativos, mejorar la productividad y
-                    minimizar errores humanos.
-                </p>
+        <section class="rpa py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-lg-6 overflow-hidden">
+                        <div class="imagen">
+                            <img src="./images/inicio/Inicio6.jpg" alt="RPA" class="img-fluid d-block w-100 img-zoom" />
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="texto">
+                            <h3>AUTOMATIZACIÓN INTELIGENTE DE PROCESOS CON RPA</h3>
+                            <p data-aos="fade-up" data-aos-delay="100">
+                                Optimizamos y transformamos los procesos de negocio a través
+                                de la Automatización Robótica de Procesos (RPA), permitiendo a
+                                las empresas reducir costos operativos, mejorar la
+                                productividad y minimizar errores humanos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-
-
     </main>
 
     <!-- Footer -->
@@ -164,6 +231,10 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
     <script src="js/main.js"></script>
     <script src="js/pages/home.js"></script>
 </body>

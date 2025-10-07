@@ -11,16 +11,6 @@
     margin-bottom: 29px;
 }
 
-/* .service-image-2-2 {
-    position: relative;
-    display: flex;
-    width: 38vw;
-    max-width: 52vw;
-    height: 24vw;
-    max-height: 39vw;
-    padding-top: 3rem;
-} */
-
 .text-one {
     position: relative;
     display: flex;
@@ -74,14 +64,10 @@
 }
 
 .service-card-service-1 {
-    /* background: white; */
-    /* padding: 2rem; */
     padding-top: 2rem;
     border-radius: 8px;
-    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-
     margin-bottom: 6rem;
 }
 
@@ -91,7 +77,6 @@
 }
 
 .service-card h3 {
-    /* color: #2c3e50; */
     color: #fff;
     margin-bottom: 1rem;
     font-size: 2rem;
@@ -99,7 +84,6 @@
 }
 
 .service-card p {
-    /* color: #7f8c8d; */
     color: #ffffff;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -109,8 +93,8 @@
 .service1-image-2,
 .service1-image-3,
 .service1-image-4 {
-    width: 12vw;
+    width: 11vw;
     max-width: 45vw;
-    height: 12vw;
+    height: 11vw;
     max-height: 35vw;
 }
