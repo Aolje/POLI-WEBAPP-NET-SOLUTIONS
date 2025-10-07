@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--
+    PÁGINA DE GESTIÓN DE SERVICIOS - PANEL DE ADMINISTRACIÓN    
+    Esta página permite a los administradores gestionar todos los servicios
+    que se ofrecen en la página web, incluyendo creación, edición y eliminación.
+    
+    Funcionalidades principales:
+    - Visualizar todos los servicios en una tabla
+    - Ver estadísticas de servicios (total, activos, inactivos)
+    - Crear nuevos servicios
+    - Editar servicios existentes
+    - Cambiar estado de servicios (activar/desactivar)
+    - Eliminar servicios
+    - Actualizar la lista de servicios
+-->
 
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Servicios - Panel de Administración</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/admin/admin.css">
-    <link rel="stylesheet" href="../css/admin/tabla-servicios.css">
-    
+
+    <!-- Enlaces a hojas de estilo -->
+    <link rel="stylesheet" href="../css/main.css"> <!-- Estilos principales del sitio -->
+    <link rel="stylesheet" href="../css/admin/admin.css"> <!-- Estilos específicos del panel admin -->
+    <link rel="stylesheet" href="../css/admin/tabla-servicios.css"> <!-- Estilos específicos de esta página -->
 </head>
 
 <body>
-    <!-- Admin Navbar -->
+    <!-- 
+        BARRA DE NAVEGACIÓN DEL PANEL DE ADMINISTRACIÓN:
+        Navegación principal que permite al administrador moverse entre
+        diferentes secciones del panel y regresar al sitio público.
+    -->
     <nav class="navbar">
         <div class="nav-container">
+            <!-- Logo de la empresa -->
             <div class="nav-logo">
                 <img src="../images/common/logo.png" alt="Logo">
             </div>
+
+            <!-- Menú de navegación -->
             <ul class="nav-menu">
                 <li class="nav-item">
                     <a href="../index.html" class="nav-link">Volver al Sitio</a>
@@ -26,7 +49,8 @@
                     <a href="./index.html" class="nav-link">Dashboard</a>
                 </li>
             </ul>
-            <div class="hamburger">
+            <!-- Botón hamburguesa (visible en móvil) -->
+            <div class="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -34,9 +58,17 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- 
+        CONTENIDO PRINCIPAL DE LA PÁGINA;
+        Área principal donde se muestra toda la información de servicios
+        y se realizan las operaciones de gestión.
+    -->
     <main class="admin-main">
         <div class="services-container">
+            <!-- 
+                ENCABEZADO DE LA SECCIÓN;
+                Título de la página y botón para crear nuevos servicios
+            -->
             <div class="services-header">
                 <h1>Gestión de Servicios</h1>
                 <div class="header-actions">
@@ -44,31 +76,55 @@
                 </div>
             </div>
 
-            <!-- Estadísticas -->
+            <!-- 
+                SECCIÓN DE ESTADÍSTICAS:
+                Tarjetas que muestran estadísticas de servicios:
+                - Total de servicios
+                - Servicios activos
+                - Servicios inactivos
+                Se llenan dinámicamente con JavaScript
+            -->
             <div class="services-stats" id="servicesStats">
-                <!-- Se llenará dinámicamente -->
+                <!-- Se llenará dinámicamente con las estadísticas -->
             </div>
 
-            <!-- Tabla de servicios -->
+            <!-- 
+                SECCIÓN DE TABLA DE SERVICIOS:
+                Contenedor donde se muestra la tabla con todos los servicios.
+                Incluye información como: imagen, título, descripción, valor,
+                estado, fecha y acciones disponibles.
+                Se llena dinámicamente con JavaScript
+            -->
             <div class="services-table-container">
                 <div class="table-header">
                     <h3>Lista de Servicios</h3>
                 </div>
                 <div id="servicesTableContainer">
-                    <!-- Se llenará dinámicamente -->
+                    <!-- Se llenará dinámicamente con la tabla de servicios -->
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Modal para crear servicio -->
+    <!-- 
+        MODAL DE CREACIÓN DE SERVICIO:
+        Ventana emergente que permite al administrador crear un nuevo servicio
+        con todos sus datos: imagen, título, descripción, valor y estado.
+    -->
     <div id="createModal" class="modal">
         <div class="modal-content">
+            <!-- Encabezado del modal con título y botón de cierre -->
             <div class="modal-header">
                 <h3>Crear Nuevo Servicio</h3>
                 <button class="close" onclick="closeCreateModal()">&times;</button>
             </div>
+
+            <!-- Formulario de creación -->
             <form id="createServiceForm">
+                <!-- 
+                    CAMPOS DEL FORMULARIO DE CREACIÓN:
+                    Todos los campos son editables para crear un nuevo servicio
+                -->
                 <div class="form-group">
                     <label for="createServiceImage">Imagen (URL):</label>
                     <input type="url" id="createServiceImage" placeholder="https://ejemplo.com/imagen.jpg">
@@ -100,6 +156,7 @@
                     </select>
                 </div>
 
+                <!-- Botones de acción del modal -->
                 <div class="modal-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeCreateModal()">Cancelar</button>
                     <button type="submit" class="btn btn-success">Crear Servicio</button>
@@ -108,16 +165,28 @@
         </div>
     </div>
 
-    <!-- Modal para editar servicio -->
+    <!-- 
+        MODAL DE EDICIÓN DE SERVICIO:
+        Ventana emergente que permite al administrador editar un servicio existente
+        modificando todos sus datos: imagen, título, descripción, valor y estado.
+    -->
     <div id="editModal" class="modal">
         <div class="modal-content">
+            <!-- Encabezado del modal con título y botón de cierre -->
             <div class="modal-header">
                 <h3>Editar Servicio</h3>
                 <button class="close" onclick="closeModal()">&times;</button>
             </div>
+
+            <!-- Formulario de edición -->
             <form id="editServiceForm">
+                <!-- Campo oculto para almacenar el ID del servicio -->
                 <input type="hidden" id="editServiceId">
 
+                <!-- 
+                    CAMPOS DEL FORMULARIO DE EDICIÓN:
+                    Todos los campos son editables para modificar el servicio
+                -->
                 <div class="form-group">
                     <label for="editServiceImage">Imagen (URL):</label>
                     <input type="url" id="editServiceImage" placeholder="https://ejemplo.com/imagen.jpg">
@@ -146,6 +215,7 @@
                     </select>
                 </div>
 
+                <!-- Botones de acción del modal -->
                 <div class="modal-actions">
                     <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
@@ -154,8 +224,11 @@
         </div>
     </div>
 
-    <script src="../js/main.js"></script>
-    <script src="../js/admin/tabla-servicios.js"></script>
+    <!-- 
+        SCRIPTS: Archivos JavaScript que proporcionan la funcionalidad de la página
+    -->
+    <script src="../js/main.js"></script> <!-- Script principal del sitio -->
+    <script src="../js/admin/tabla-servicios.js"></script> <!-- Script específico para gestión de servicios -->
 </body>
 
 </html>

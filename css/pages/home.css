@@ -1,3 +1,25 @@
+/* 
+====================================================================
+HOJA DE ESTILOS: home.css
+Propósito:
+  - Controlar la apariencia de la página de inicio (index.html).
+  - Aplicar estilos específicos a las secciones: Inicio, Acerca,
+    Servicios, Ciencia de Datos y RPA.
+  - Definir colores corporativos, tipografías, tamaños y efectos
+    visuales coherentes con la identidad de la marca.
+Dependencias:
+  - Se apoya en Bootstrap 5 para la estructura base.
+  - Fuentes Google: Montserrat (texto) y Poppins (títulos).
+====================================================================
+*/
+
+/* ================================================================
+ESTILOS GENERALES DEL CUERPO Y CONTENEDOR PRINCIPAL
+- Se define un fondo azul institucional (#285578).
+- Se ajusta el margen superior para compensar el header fijo.
+- Se aplican las fuentes principales del proyecto.
+================================================================ */
+
 body {
     background: #285578;
     min-height: 100vh;
@@ -12,7 +34,11 @@ body {
     position: relative;
 }
 
-/* ====== TÍTULOS CON POPPINS ====== */
+/* ================================================================
+TIPOGRAFÍA
+- Poppins: títulos destacados (mayor peso visual).
+- Montserrat: textos de párrafo (lectura fluida y moderna).
+================================================================ */
 .acerca h2,
 .servicio .texto h3,
 .ciencia h3,
@@ -21,7 +47,6 @@ body {
     font-weight: 700; /* Negrita para títulos */
 }
 
-/* ====== TEXTOS CON MONSERRAT ====== */
 .acerca p,
 .servicio .texto p,
 .ciencia p,
@@ -31,7 +56,11 @@ body {
 }
 
 
-/* Sección Inicio */
+/* ================================================================
+SECCIÓN INICIO (HERO)
+- Imagen a pantalla completa (full height).
+- Se emplea object-fit para escalar sin deformar.
+================================================================ */
 .Inicio {
     width: 100%;
     margin: 0;
@@ -52,7 +81,11 @@ body {
 }
 
 
-/* Texto superpuesto sobre la imagen */
+/* ================================================================
+TEXTO SUPERPUESTO (overlay-text)
+- Permite colocar textos centrados sobre las imágenes del hero.
+- Se usa transform para centrar exacto y sombras para legibilidad.
+================================================================ */
 .overlay-text {
     position: absolute;
     top: 50%;
@@ -73,11 +106,17 @@ body {
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
-/* ====== ACERCA DE NOSOTROS ====== */
+
+/* ================================================================
+SECCIÓN ACERCA DE NOSOTROS
+- Fondo azul corporativo (#285578), texto blanco, centrado y legible.
+- Sección introductoria con justificación del texto.
+================================================================ */
+
 .acerca {
     padding: 60px 6%;
     text-align: center;
-    background: #285578;/* Fondo blanco para esta sección */
+    background: #285578;
     position: relative;
     z-index: 2; /* Para asegurar que esté sobre otros elementos */
 }
@@ -93,14 +132,18 @@ body {
 
 .acerca p {
     font-size: 18px;
-    color: white; /* Texto oscuro para contraste con fondo blanco */
+    color: white;
     line-height: 1.7;
     max-width: 1000px;
     margin: 0 auto;
     text-align: justify;
 }
 
-/* ====== IMAGEN DESPUES DE ACERCA ====== */
+/* ================================================================
+IMAGEN DESPUÉS DE ACERCA
+- Imagen full-width que actúa como divisor visual entre secciones.
+- Usa técnicas de renderizado mejoradas para nitidez en pantallas HD.
+================================================================ */
 .imagenacerca {
     width: 100%;
     padding: 0;
@@ -114,10 +157,11 @@ body {
     max-height: 400px;
     display: block;
     object-fit: cover;
-    object-fit: center;
+    object-position: center; /* <-- corregido (antes estaba 'object-fit: center') */
     margin-bottom: 0;
 }
 
+/* Renderizado mejorado para todas las imágenes principales */
 .imagenacerca img,
 .Inicio img,
 .servicio .imagen img,
@@ -126,7 +170,13 @@ body {
     image-rendering: crisp-edges; /* Mejor renderizado en Firefox */
     image-rendering: high-quality; /* Renderizado de alta calidad */
 }
-/* ====== SERVICIOS ====== */
+
+/* ================================================================
+SECCIÓN SERVICIO
+- Diseño de dos columnas (imagen + texto).
+- Uso de flexbox para alineación vertical y distribución equitativa.
+================================================================ */
+
 .servicio {
     background: #285578;
     border-radius: 8px;
@@ -140,7 +190,6 @@ body {
     gap: 40px;
     border-radius: 0;
 }
-
 
 .servicio .texto {
     flex: 1;
@@ -178,7 +227,11 @@ body {
     object-fit: cover;
 }
 
-/* Servicio con orden invertido */
+/* ================================================================
+SECCIÓN DISEÑO Y TRANSFORMACIÓN
+- Igual estructura que servicio, pero con fondo oscuro (#061c30).
+- Invierte el orden visual en desktop para tener dinamismo.
+================================================================ */
 .diseño {
     background: #061c30;
     border-radius: 8px;
@@ -192,7 +245,6 @@ body {
     gap: 40px;
     border-radius: 0;
 }
-
 
 .diseño .texto {
     flex: 1;
@@ -220,7 +272,6 @@ body {
 .diseño .imagen {
     flex: 1;
     padding: 0 0 0 6%;
-    
 }
 
 .diseño .imagen img {
@@ -229,21 +280,22 @@ body {
     display: block;
     border-radius: 0;
     object-fit: cover;
-    
 }
 
-
-/* ====== CIENCIA DE DATOS ====== */
+/* ================================================================
+SECCIÓN CIENCIA DE DATOS
+- Bloque central con texto y una imagen full-bleed (a todo el ancho).
+- Se usa el truco de margin-left negativo para romper el contenedor
+  y ocupar el viewport completo.
+================================================================ */
 .ciencia {
     background: #285578;
     padding: 30px 6%;
     text-align: center;
     margin: 1px 0;
     overflow: visible; 
-       
 }
-    
-    
+
 .ciencia h3 {
     margin-bottom: 14px;
     color: white;
@@ -253,14 +305,12 @@ body {
 .ciencia p {
     max-width: 900px;
     margin: 0 auto 20px;
-    color: white; /* Texto oscuro para contraste con fondo blanco */
+    color: white;
     line-height: 1.7;
     text-align: justify;
 }
 
- 
-    .ciencia .imagen {
-
+.ciencia .imagen {
     width: 100vw; /* Hacer que ocupe el ancho completo de la ventana */
     margin-left: calc(-50vw + 50%); /* Truco para centrar el viewport width */
     margin-top: 30px;
@@ -269,21 +319,19 @@ body {
     justify-content: center;
     align-items: center;
     border: none;
-
-    }
-
-
-.ciencia .imagen img {
-    
-
-   width: 100%;
-    max-width: 100vw; /* Limitar al ancho de la ventana */
-    height: auto;
-    display: block;
 }
 
+.ciencia .imagen img {
+   width: 100%;
+   max-width: 100vw; /* Limitar al ancho de la ventana */
+   height: auto;
+   display: block;
+}
 
-/* ====== RPA ====== */
+/* ================================================================
+SECCIÓN RPA
+- Repite patrón de servicios con fondo azul y diseño flexible.
+================================================================ */
 
 .rpa {
     background: #285578;
@@ -337,7 +385,12 @@ body {
 }
 
 
-/* ====== RESPONSIVE ====== */
+/* ================================================================
+RESPONSIVE DESIGN
+- Ajustes para pantallas menores de 900px.
+- Convierte las secciones de dos columnas en diseño vertical.
+================================================================ */
+
 @media (max-width: 900px) {
     .servicio,
     .servicio.invertido {
@@ -361,11 +414,13 @@ body {
     .Inicio img {
         max-height: none;
     }
-
-    
 }
 
-/* Efecto suave para imágenes: zoom y sombra ligeros */
+/* ================================================================
+EFECTOS VISUALES
+- Efecto hover de zoom en imágenes con sombra suave.
+- Transición desactivada para usuarios con "reducir movimiento".
+================================================================ */
 .img-zoom {
   transition: transform .35s ease, box-shadow .35s ease;
   transform-origin: center center;
@@ -375,13 +430,16 @@ body {
   box-shadow: 0 12px 24px rgba(0,0,0,.18);
 }
 
-
 @media (prefers-reduced-motion: reduce) {
   .img-zoom { transition: none; }
 }
 
 
-/* Hace que un bloque se salga del contenedor y ocupe todo el ancho de la ventana */
+/* ================================================================
+FULL-BLEED UTILITY
+- Hace que un bloque (como una imagen) ocupe el ancho completo
+  del viewport, ignorando los márgenes del contenedor Bootstrap.
+================================================================ */
 .full-bleed {
   width: 100vw;                 /* ocupa todo el viewport */
   position: relative;
@@ -396,4 +454,20 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ================================================================
+UTILIDADES PARA REVEAL DE TARJETAS
+- Estas clases se usan si home.js aplica 'will-reveal' / 'is-revealed'
+  sobre .feature-card. No alteran el diseño; solo controlan la
+  animación de entrada cuando el elemento es visible.
+================================================================ */
+.feature-card.will-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.feature-card.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
 }

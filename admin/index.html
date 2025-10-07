@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--
+    DASHBOARD PRINCIPAL DEL PANEL DE ADMINISTRACIÓN    
+    Esta es la página principal del panel de administración que sirve como
+    punto de entrada para acceder las funcionalidades de gestión.
+-->
 
 <head>
+  <!-- Configuración básica del documento -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Panel de Administración - NetSolutions</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/admin/admin.css">
+
+  <!-- Enlaces a hojas de estilo -->
+  <link rel="stylesheet" href="../css/main.css"> <!-- Estilos principales del sitio -->
+  <link rel="stylesheet" href="../css/admin/admin.css"> <!-- Estilos específicos del panel admin -->
 </head>
 
 <body>
-  <!-- Admin Navbar -->
+  <!-- 
+      BARRA DE NAVEGACIÓN DEL PANEL DE ADMINISTRACIÓN
+      Navegación principal que permite al administrador regresar al sitio público.
+  -->
   <nav class="navbar">
     <div class="nav-container">
+      <!-- Logo de la empresa -->
       <div class="nav-logo">
         <img src="../images/common/logo.png" alt="Logo">
       </div>
+
+      <!-- Menú de navegación -->
       <ul class="nav-menu">
         <li class="nav-item">
           <a href="../index.html" class="nav-link">Volver al Sitio</a>
         </li>
       </ul>
-      <div class="hamburger">
+      <!-- Botón hamburguesa (visible en móvil) -->
+      <div class="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
@@ -29,16 +44,39 @@
     </div>
   </nav>
 
-  <!-- Main Content -->
+  <!-- 
+      CONTENIDO PRINCIPAL DEL DASHBOARD
+      Área principal que contiene el dashboard con las tarjetas de navegación
+      a las diferentes secciones de administración.
+  -->
   <main class="admin-main">
     <div class="container">
+      <!-- Título principal del panel de administración -->
       <h1 style="color: white">Panel de Administración</h1>
+
+      <!-- 
+          DASHBOARD CON TARJETAS DE NAVEGACIÓN
+          Tarjetas que permiten acceder a las diferentes secciones de gestión
+          del panel de administración.
+      -->
       <div class="admin-dashboard">
+        <!-- 
+            TARJETA DE GESTIÓN DE SERVICIOS
+            Permite acceder a la página de gestión de servicios donde se pueden
+            crear, editar, eliminar y cambiar el estado de los servicios ofrecidos.
+        -->
         <div class="dashboard-card">
           <h3>Servicios</h3>
           <p>Gestionar servicios y contenido</p>
           <a href="tabla-servicios.html" class="btn">Gestionar</a>
         </div>
+
+        <!-- 
+            TARJETA DE GESTIÓN DE CONTACTOS
+            Permite acceder a la página de gestión de contactos donde se pueden
+            ver, editar el estado y agregar comentarios a los mensajes de contacto
+            enviados por los usuarios.
+        -->
         <div class="dashboard-card">
           <h3>Contactos</h3>
           <p>Gestionar mensajes de contacto y seguimiento</p>
@@ -48,8 +86,11 @@
     </div>
   </main>
 
-  <script src="../js/main.js"></script>
-  <script src="../js/admin/admin.js"></script>
+  <!-- 
+      SCRIPTS: Archivos de JavaScript que proporcionan la funcionalidad de la página
+  -->
+  <script src="../js/main.js"></script> <!-- Script principal del sitio -->
+  <script src="../js/admin/admin.js"></script> <!-- Script específico del panel de administración -->
 </body>
 
 </html>
