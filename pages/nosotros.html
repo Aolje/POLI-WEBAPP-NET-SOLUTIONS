@@ -4,18 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros - NetSolutions</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Estilos personalizados -->
+    <title>Nosotros - Mi Sitio Web</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/pages/nosotros.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Tipografías -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
 </head>
 
@@ -27,30 +22,14 @@
                 <img src="../images/common/logo.png" alt="Logo">
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="../index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="nosotros.html" class="nav-link active">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a href="servicios.html" class="nav-link">Servicios</a>
-                </li>
-                <li class="nav-item">
-                    <a href="blog.html" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="catalogo.html" class="nav-link">Catálogo</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contacto.html" class="nav-link">Contacto</a>
-                </li>
-                <li class="nav-item">
-                    <a href="login.html" class="nav-link">Login</a>
-                </li>
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="nosotros.html" class="nav-link active">Nosotros</a></li>
+                <li class="nav-item"><a href="servicios.html" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
             </ul>
-            <!-- Botón hamburguesa (visible en móvil) -->
-            <div class="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+            <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -58,10 +37,14 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- ========================= -->
+    <!-- SECCIÓN PRINCIPAL: NOSOTROS -->
+    <!-- Descripción general del sitio y estructura principal del contenido -->
+    <!-- ========================= -->
+
     <main class="main-content">
 
-        <!-- About -->
+        <!-- ABOUT: Presenta el título principal de la página -->
         <section class="about-section">
             <div class="container about-content">
                 <div class="about-text">
@@ -70,8 +53,9 @@
             </div>
         </section>
 
-
+        <!-- HISTORIA: Línea de tiempo de la empresa -->
         <section class="historia">
+            <!-- Párrafo introductorio: contextualiza los servicios ofrecidos -->
             <p>
                 Nuestro objetivo es acompañar a las empresas en su crecimiento,
                 ofreciendo servicios que van desde el desarrollo de páginas web y aplicaciones móviles,
@@ -81,37 +65,49 @@
 
             <h2>Nuestra Historia</h2>
 
-            <!-- Evento 2 -->
-            <div class="timeline-item right">
-                <div class="content">
-                    <h3>2007</h3>
-                    <p>Consolidamos las operaciones a nivel nacional.</p>
-                </div>
-            </div>
+            <!-- Línea de tiempo: muestra los hitos importantes de la empresa -->
+            <div class="timeline">
 
-            <!-- Evento 3 -->
-            <div class="timeline-item left">
-                <div class="content">
-                    <h3>2012</h3>
-                    <p>Certificación del SGI (Calidad y ambiental).</p>
+                <!-- Evento 1 -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>2005</h3>
+                        <p>Fundado <strong>NETSOLUTIONS S.A.S</strong> por Alberto Martínez Acosta C.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Evento 4 -->
-            <div class="timeline-item right">
-                <div class="content">
-                    <h3>2018</h3>
-                    <p>Consolidamos en el sector financiero como un aliado en BPO.</p>
+                <!-- Evento 2 -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>2007</h3>
+                        <p>Consolidamos las operaciones a nivel nacional.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Evento 5 -->
-            <div class="timeline-item left">
-                <div class="content">
-                    <h3>2022</h3>
-                    <p>Ampliación de nuestro portafolio e inicio de operaciones en el sector minero y productivo.</p>
+                <!-- Evento 3 -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>2012</h3>
+                        <p>Certificación del SGI (Calidad y ambiental).</p>
+                    </div>
                 </div>
-            </div>
+
+                <!-- Evento 4 -->
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>2018</h3>
+                        <p>Consolidamos en el sector financiero como un aliado en BPO.</p>
+                    </div>
+                </div>
+
+                <!-- Evento 5 -->
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>2022</h3>
+                        <p>Ampliación de nuestro portafolio e inicio de operaciones en el sector minero y productivo.
+                        </p>
+                    </div>
+                </div>
 
             </div>
         </section>
@@ -128,53 +124,39 @@
 
                 <!-- Contenedor de los valores -->
                 <div class="valores-grid">
-                    <!-- Nuestros Valores -->
-                    <section class="valores">
-                        <div class="container">
-                            <h2 class="text-center">NUESTROS VALORES</h2>
-                            <p class="valores-subtexto text-center">
-                                A continuación, te presentamos nuestras principales líneas de acción, pensadas para
-                                impulsar la eficiencia,
-                                la innovación y los resultados sostenibles.
-                            </p>
-                            <div class="valores-grid">
 
-                                <div class="valor-card text-center">
-                                    <img src="../images/Nosotros/nosotros2.jpg" alt="Innovación con propósito"
-                                        class="valor-img">
-                                    <h3>Innovación con propósito</h3>
-                                    <p>
-                                        Impulsamos soluciones creativas y tecnológicas que responden a necesidades
-                                        reales
-                                        y generan valor sostenible para nuestros clientes.
-                                    </p>
-                                </div>
+                    <div class="valor-card text-center">
+                        <img src="../images/Nosotros/nosotros2.jpg" alt="Innovación con propósito" class="valor-img">
+                        <h3>Innovación con propósito</h3>
+                        <p>
+                            Impulsamos soluciones creativas y tecnológicas que responden a necesidades reales
+                            y generan valor sostenible para nuestros clientes.
+                        </p>
+                    </div>
 
-                                <div class="valor-card text-center">
-                                    <img src="../images/Nosotros/nosotros3.jpg" alt="Compromiso con los resultados"
-                                        class="valor-img">
-                                    <h3>Compromiso con los resultados</h3>
-                                    <p>
-                                        Trabajamos con enfoque y responsabilidad para cumplir cada meta, superando
-                                        expectativas
-                                        y midiendo nuestro impacto en cada proyecto.
-                                    </p>
-                                </div>
+                    <div class="valor-card text-center">
+                        <img src="../images/Nosotros/nosotros3.jpg" alt="Compromiso con los resultados"
+                            class="valor-img">
+                        <h3>Compromiso con los resultados</h3>
+                        <p>
+                            Trabajamos con enfoque y responsabilidad para cumplir cada meta, superando expectativas
+                            y midiendo nuestro impacto en cada proyecto.
+                        </p>
+                    </div>
 
-                                <div class="valor-card text-center">
-                                    <img src="../images/Nosotros/nosotros4.jpg"
-                                        alt=">Excelencia e innovación tecnológica" class="valor-img">
-                                    <h3>Excelencia e innovación tecnológica</h3>
-                                    <p>
-                                        Apostamos por soluciones basadas en tecnología, automatización e inteligencia
-                                        artificial,
-                                        que evolucionan constantemente para anticiparse a las necesidades del mercado.
-                                    </p>
-                                </div>
+                    <div class="valor-card text-center">
+                        <img src="../images/Nosotros/nosotros4.jpg" alt=">Excelencia e innovación tecnológica"
+                            class="valor-img">
+                        <h3>Excelencia e innovación tecnológica</h3>
+                        <p>
+                            Apostamos por soluciones basadas en tecnología, automatización e inteligencia artificial,
+                            que evolucionan constantemente para anticiparse a las necesidades del mercado.
+                        </p>
+                    </div>
 
-                            </div>
-                        </div>
-                    </section>
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -202,10 +184,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
     <script src="../js/main.js"></script>
     <script src="../js/pages/nosotros.js"></script>
 </body>
